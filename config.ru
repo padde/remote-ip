@@ -1,1 +1,1 @@
-run lambda {|env| [200, {'Content-Type' => 'text/plain'}, [env['REMOTE_ADDR']]] }
+run lambda {|env| [200, {'Content-Type'=>'text/plain'}, [env['HTTP_X_FORWARDED_FOR'] || env['REMOTE_ADDR']]] }
