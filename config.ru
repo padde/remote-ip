@@ -9,8 +9,6 @@ class Application
   def call(env)
     [ 200, {'Content-Type'=>'text/plain'}, [remote_ip(env)] ]
   end
-
-  include NewRelic::Agent::Instrumentation::Rack
 end
 
 run Application.new
