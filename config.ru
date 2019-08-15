@@ -2,7 +2,7 @@ require 'newrelic_rpm'
 
 class Application
   def call(env)
-    [ 200, {'Content-Type'=>'text/plain'}, [remote_ip(env)] ]
+    [200, { 'Content-Type' => 'text/plain' }, [remote_ip(env)]]
   end
 
   private
