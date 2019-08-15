@@ -3,7 +3,7 @@ require 'newrelic_rpm'
 class Application
   def remote_ip(env)
     remote_ip = env['HTTP_X_FORWARDED_FOR'] || env['REMOTE_ADDR']
-    remote_ip.scan(/[\d.]+/).first
+    remote_ip.split(/\s*,\s*/).first
   end
 
   def call(env)
